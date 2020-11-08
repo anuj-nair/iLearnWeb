@@ -8,8 +8,7 @@
         name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link
-        rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Font: Montserrat -->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -21,22 +20,44 @@
                 margin: 0;
                 font-family: 'Montserrat', sans-serif;
             }
-            body{
-              background-color: #e9ecef;
+            body {
+                background-color: #e9ecef;
             }
             .nav-link {
                 font-weight: bold;
                 color: beige;
             }
             #Logo > span {
-                margin-right: 3px;
+                font-size: 19px;
+                font-weight: bolder;
             }
             #Logo {
-                font-weight: bolder;
+                font-weight: normal;
             }
             .screen_bg {
                 height: 100vh;
                 padding-top: 300px;
+            }
+            #st_tab a.nav-link {
+                color: #666666;
+                opacity: 0.7;
+                font-size: 20px;
+                padding: 5px 15px;
+                margin: 10px;
+                border: 2px;
+                border-bottom: 3px #e9ecef !important;
+                transition: 0.3s ease-in-out;
+            }
+            #st_tab a.nav-link:hover{
+                color: #4e4e4e;
+                opacity: 1;
+                border-bottom: 3px solid  #007bff !important;
+            }
+            #st_tab a.nav-link.active {
+                color: #565656;
+                border-bottom: 3px solid  #007bff !important;
+                background-color: #e9ecef !important;
+                opacity: 1;
             }
         </style>
 
@@ -59,108 +80,150 @@
                 </li>
             </ul>
         </nav>
-        <main class="main-">
-            <div class="container register">
-                <div class="row">
-                    <div class="col-md-3 register-left">
+        <main class="main-register">
+            <div class="container">
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-12 text-center" style="margin-top: 50px;">
                         <h3>Welcome</h3>
                         <p>You are 30 seconds away from quality education!</p>
-                        <input type="submit" name="" value="Login"/><br/>
+
+                        <div class="d-flex justify-content-sm-center">
+                            <div id="st_tab">
+                                <ul id="sub_products" class="nav" role="tablist">
+                                    <li id="student_tab" class="nav-item">
+                                        <a class="nav-link active" role="tab" href="#student_register">Student</a>
+                                    </li>
+                                    <li id="teacher_tab" class="nav-item">
+                                        <a class="nav-link" role="tab" href="#teacher_register">Teacher</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-9 register-right">
-                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Student</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Teacher</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Apply as a Student</h3>
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                                <option>What is your Birthdate?</option>
-                                                <option>What is Your old Phone Number</option>
-                                                <option>What is your Pet Name?</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
-                                        </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+                    <div class=" col-12 tab-content">
+                        <div class="tab-pane fade show active" id="student_register" role="tabpanel">
+                            <div class="row">
+                                <div class="card col-12">
+                                    <div class="card-body">
+                                        <h4>Register as Student</h4>
+                                        <form action="" method="">
+                                            <div class="form-group row">
+                                                <label for="first_name" class="col-md-4 col-form-label text-md-left">First Name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="first_name" class="form-control" name="first_name" required autofocus>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="last_name" class="col-md-4 col-form-label text-md-left">Last Name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="last_name" class="form-control" name="last_name" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="email_address" class="col-md-4 col-form-label text-md-left">E-Mail Address</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="email_address" class="form-control" name="email_address" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="password" class="col-md-4 col-form-label text-md-left">Password</label>
+                                                <div class="col-md-6">
+                                                    <input type="password" id="password" class="form-control" name="password" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="c_password" class="col-md-4 col-form-label text-md-left">Confirm Password</label>
+                                                <div class="col-md-6">
+                                                    <input type="password" id="c_password" class="form-control" name="c_password" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-6 offset-md-4">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="remember">
+                                                            Remember Me
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 offset-md-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Register
+                                                </button>
+                                                <a href="#" class="btn btn-link">
+                                                    Do You Already have an Account?
+                                                </a>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">Apply as a Teacher</h3>
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
-                                        </div>
+                        </div>
+                        <div class="tab-pane fade" id="teacher_register" role="tabpanel">
+                            <div class="row">
+                                <div class="card col-12">
+                                    <div class="card-body">
+                                        <h4>Register as Teacher</h4>
+                                        <form action="" method="">
+                                            <div class="form-group row">
+                                                <label for="first_name" class="col-md-4 col-form-label text-md-left">First Name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="first_name" class="form-control" name="first_name" required autofocus>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="last_name" class="col-md-4 col-form-label text-md-left">Last Name</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="last_name" class="form-control" name="last_name" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="email_address" class="col-md-4 col-form-label text-md-left">E-Mail Address</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" id="email_address" class="form-control" name="email_address" required>
+                                                </div>
+                                            </div>
 
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                                <option>What is your Birthdate?</option>
-                                                <option>What is Your old Phone Number</option>
-                                                <option>What is your Pet Name?</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="`Answer *" value="" />
-                                        </div>
-                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                            <div class="form-group row">
+                                                <label for="password" class="col-md-4 col-form-label text-md-left">Password</label>
+                                                <div class="col-md-6">
+                                                    <input type="password" id="password" class="form-control" name="password" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="c_password" class="col-md-4 col-form-label text-md-left">Confirm Password</label>
+                                                <div class="col-md-6">
+                                                    <input type="password" id="c_password" class="form-control" name="c_password" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-6 offset-md-4">
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox" name="remember">
+                                                            Remember Me
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 offset-md-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    Register
+                                                </button>
+                                                <a href="#" class="btn btn-link">
+                                                    Do You Already have an Account?
+                                                </a>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </main>
 
@@ -169,5 +232,14 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+            $('#st_tab a').on('click', function (e) {
+                loc = $(this).attr('href');
+                if (loc.includes('#')) {
+                    e.preventDefault();
+                }
+                $(this).tab('show');
+            });
+        </script>
     </body>
 </html>
